@@ -1,0 +1,48 @@
+.navbar{
+    background-color: #fff !important;
+    height: auto;
+    display: flex;
+    border-radius: none!important;
+    border: none;
+    box-shadow: none!important;
+
+}
+.tool {
+    display: flex;  
+    padding-top: 10px;
+}
+.img_navbar{
+    display: flex;
+    width: 350px!important;
+    height: 150px;
+    margin-left: 400px!important;
+}
+.btn {
+    margin: 0px 60px;
+    /* display: flex;
+    justify-content: space-around!important; */
+    color: whitesmoke;
+    text-decoration: none!important;
+    /* font-size: 10px!important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif!important; */
+}
+.btn:hover {
+    color: darkgray;
+    text-decoration: underline;
+}
+.vv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #503223;
+}
+
+.btn_nav {
+       width: 300px;
+       /* display: flex;
+       justify-content: end; */
+       display: block;
+}
+.vvv {
+    color: #503223  ;
+}

@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+/* START HOME PAGE */
+.presentation{
+  background: url('./img/ourstory.gif') no-repeat;
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  position: relative;
+  margin-top: 10px;
+}
+
+ .presentation::after{
+  content:'W E L C O M E';
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 300px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.par h3{
+  color: #503223;
+  font-weight: 800;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;  
+  padding-top: 90px;
+}
+
+.par span{
+  color: #503223;
+  display: flex;
+  text-align: center;
+  margin-top: 2%;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.par{
+  height: 300px ;
+  background-color: #DCDCDC;
+}
+.presentation2 {
+  display: flex;
+  justify-content: baseline;
+}
+.presentation2_one {
+  padding-top: 140px;
+}
+.presentation2_one span {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nanum Myeongjo', serif;
+  color: #503223;
+  font-size: 25px;
+}
+.presentation2_two img {
+  padding-top: 80px;
+  width: 600px;
+}
+.presentation3 {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+.presentation3 h3 {
+  color: #503223;
+  font-size: 50px;
+}
+.presentation3 span {
+  color: #503223;
+  font-size: 20px;
+}
+/* END HOME PAGE */
+
+/* START PRODUCT PAGE */
+.shop  {
+  display: flex;
+  justify-content: space-between;
+  background-color: #efefef;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: -50px;
+}
+.shop span {
+  font-size: 18px;
+}

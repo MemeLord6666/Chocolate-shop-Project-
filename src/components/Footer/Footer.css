@@ -1,0 +1,26 @@
+.foot {
+    background-color: whitesmoke;
+}
+.logo_ {
+    margin-top: 40px;
+    width: 250px!important;
+    height: 200px!important;
+}
+a {
+    text-decoration: none!important;
+    color: #503223;
+}
+a:hover {
+    color: black;
+}
+.bl {
+    margin-top: 70px;
+}
+.ic{
+    margin: 0px 15px;
+}
+.social span {
+    margin-left: 20px;
+    color: #503223;
+    font-weight: bolder;
+}
