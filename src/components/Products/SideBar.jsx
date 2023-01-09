@@ -53,13 +53,13 @@ const SideBar = () => {
 
         <Grid>
           <FormControl>
-            <FormLabel>Type</FormLabel>
+            <FormLabel>CHOCOLATE TYPE</FormLabel>
             <RadioGroup onChange={(e) => fetchByParams("type", e.target.value)}>
               <FormControlLabel value="all" control={<Radio />} label="all" />
               <FormControlLabel
                 value="telephone"
                 control={<Radio />}
-                label="telephone"
+                label="Milk"
               />
               <FormControlLabel
                 value="laptop"

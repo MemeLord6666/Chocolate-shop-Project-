@@ -195,7 +195,6 @@ export default function Navbar() {
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
-              onClick={() => navigate("/cart")}
             >
               <Badge  color="error">
               <FavoriteBorderIcon sx={{color: "#503223"}} />

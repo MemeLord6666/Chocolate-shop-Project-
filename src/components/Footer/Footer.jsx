@@ -21,10 +21,9 @@ export const Footer = () => {
               Devwares
             </p>
             <CDBBox flex="column" display="flex" style={{ cursor: 'pointer', padding: '0',  }}>
-              <Link href="/">Resources</Link>
+              <Link to="/">Home</Link>
               <Link href="/">About Us</Link>
               <Link href="/">Contact</Link>
-              <Link href="/">Blog</Link>
             </CDBBox>
           </CDBBox>
           <CDBBox className="bl">
@@ -32,9 +31,8 @@ export const Footer = () => {
               Help
             </p>
             <CDBBox display="flex" flex="column" style={{ cursor: 'pointer', padding: '0' }}>
-              <Link href="/">Support</Link>
-              <Link href="/">Sign Up</Link>
-              <Link href="/">Sign In</Link>
+              <Link to="/auth">Sign Up</Link>
+              <Link to="/auth">Sign In</Link>
             </CDBBox>
           </CDBBox>
           <CDBBox className="bl">
@@ -57,9 +55,9 @@ export const Footer = () => {
             <div className='social'> 
             <span >SOCIAL MEDIA</span>
             <br />
-          <a className='ic' href=""><InstagramIcon/></a>
-          <a className='ic' href=""><FacebookIcon/></a>
-          <a className='ic' href=""><YouTubeIcon/></a>
+          <a className='ic' target="_blank" href="https://instagram.com/__karypov__?igshid=ZDdkNTZiNTM="><InstagramIcon/></a>
+          <a className='ic' target="_blank" href="https://www.facebook.com/profile.php?id=100031184284213"><FacebookIcon/></a>
+          <a className='ic' target="_blank" href="https://www.youtube.com/@user-vp9zp2oz8u"><YouTubeIcon/></a>
             </div>
             
     
