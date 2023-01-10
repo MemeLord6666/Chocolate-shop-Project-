@@ -10,6 +10,7 @@ import Paper from "@mui/material/Paper";
 import { useCart } from "../../contexts/cartContext";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const pages = [
   { name: "SHOP", link: "/credit", id: 1 },
@@ -49,19 +50,7 @@ export default function Cart() {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Picture</StyledTableCell>
-            <StyledTableCell align="right">Name</StyledTableCell>
-            <StyledTableCell align="right">Type</StyledTableCell>
-            <StyledTableCell align="right">Description</StyledTableCell>
-            <StyledTableCell align="right">Price</StyledTableCell>
-            <StyledTableCell align="right">Count</StyledTableCell>
-            <StyledTableCell align="right">SubPrice</StyledTableCell>
-            <StyledTableCell align="right">-</StyledTableCell>
-          </TableRow>
-        </TableHead>
+      <Table sx={{ minWidth: 700, backgroundColor: "whitesmoke" }} aria-label="customized table">
         <TableBody>
           {cart?.products.map((row) => (
             <StyledTableRow key={row.item.id}>
@@ -87,9 +76,10 @@ export default function Cart() {
               </StyledTableCell>
               <StyledTableCell  sx={{fontWeight: 600}} align="right">{row.subPrice}</StyledTableCell>
               <StyledTableCell align="right">
-                <Button onClick={() => deleteCartProduct(row.item.id)}>
+                {/* <Button onClick={() => deleteCartProduct(row.item.id)}>
                   DELETE
-                </Button>
+                </Button> */}
+                <DeleteOutlineIcon sx={{color: "#503223"}} onClick={() => deleteCartProduct(row.item.id)}/>
               </StyledTableCell>
             </StyledTableRow>
           ))}
