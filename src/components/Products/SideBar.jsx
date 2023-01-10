@@ -10,11 +10,15 @@ import {
   RadioGroup,
   TextField,
 } from "@mui/material";
-
+import Accordion from '@mui/material/Accordion';
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../../contexts/productsContext";
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { fontWeight } from "@mui/system";
 
 const SideBar = () => {
 
@@ -31,8 +35,8 @@ const SideBar = () => {
   }, [search]);
 
   return (
-    <Grid item md={3}>
-      <Paper elevation={5} sx={{ p: 2 }}>
+    <Grid item md={3} >
+      <Paper sx={{width: "250px"}}>
         <TextField
           fullWidth
           id="input-with-icon-textfield"
@@ -45,7 +49,7 @@ const SideBar = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon />
+                <SearchIcon  />
               </InputAdornment>
             ),
           }}
@@ -53,57 +57,90 @@ const SideBar = () => {
 
         <Grid>
           <FormControl>
-            <FormLabel>CHOCOLATE TYPE</FormLabel>
+            <Accordion sx={{width: "250px"}}>
+            <AccordionSummary  expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header">
+            <FormLabel sx={{color: "#503223", fontWeight: "bolder"}}>CHOCOLATE TYPE</FormLabel>
+            </AccordionSummary>
+            <AccordionDetails>
             <RadioGroup onChange={(e) => fetchByParams("type", e.target.value)}>
-              <FormControlLabel value="all" control={<Radio />} label="all" />
+              <FormControlLabel value="all" control={<Radio />} label="ALL" />
               <FormControlLabel
-                value="telephone"
+                value="mix"
                 control={<Radio />}
-                label="Milk"
+                label="MIX"
               />
               <FormControlLabel
-                value="laptop"
+                value="milk"
                 control={<Radio />}
-                label="laptop"
+                label="MILK"
               />
               <FormControlLabel
-                value="watch"
+                value="dark"
                 control={<Radio />}
-                label="watch"
+                label="DARK"
+              />
+              <FormControlLabel
+                value="white"
+                control={<Radio />}
+                label="WHITE"
+              />
+              <FormControlLabel
+                value="halal"
+                control={<Radio />}
+                label="HALAL"
+              />
+              <FormControlLabel
+                value="vegan"
+                control={<Radio />}
+                label="VEGAN"
+              />
+              <FormControlLabel
+                value="box"
+                control={<Radio />}
+                label="BOX"
               />
             </RadioGroup>
+            </AccordionDetails>
+            </Accordion>
           </FormControl>
-          <input
-            step={100}
-            min={1}
-            max={10000}
-            onChange={(e) => console.log(e.target.value)}
-            type="range"
-            name=""
-            id=""
-          />
           <FormControl>
-            <FormLabel>Price</FormLabel>
+          <Accordion sx={{width: "250px"}}>
+          <AccordionSummary  expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header">
+            <FormLabel sx={{color: "#503223", fontWeight: "bolder"}}>Price</FormLabel>
+            </AccordionSummary>
+            <AccordionDetails>
+
             <RadioGroup
               onChange={(e) => fetchByParams("price_lte", e.target.value)}
             >
-              <FormControlLabel value="all" control={<Radio />} label="all" />
+              <FormControlLabel value="all" control={<Radio />} label="ALL" />
+              <FormControlLabel
+                value="25"
+                control={<Radio />}
+                label="LESS THAN 25$"
+              />
+              <FormControlLabel
+                value="50"
+                control={<Radio />}
+                label="LESS THAN 50$"
+              />
+              <FormControlLabel
+                value="75"
+                control={<Radio />}
+                label="LESS THAN 75$"
+              />
               <FormControlLabel
                 value="100"
                 control={<Radio />}
-                label="less than 100$"
-              />
-              <FormControlLabel
-                value="600"
-                control={<Radio />}
-                label="less than 600$"
-              />
-              <FormControlLabel
-                value="1300"
-                control={<Radio />}
-                label="less than 1300$"
+                label="LESS THAN 100$"
               />
             </RadioGroup>
+            </AccordionDetails>
+            </Accordion>
           </FormControl>
         </Grid>
 

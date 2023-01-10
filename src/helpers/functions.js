@@ -3,6 +3,7 @@ export function getCountProductsInCart() {
   return cart ? cart.products.length : 0;
 }
 
+
 export const calcSubPrice = (product) => +product.count * product.item.price;
 
 export const calcTotalPrice = (products) => {

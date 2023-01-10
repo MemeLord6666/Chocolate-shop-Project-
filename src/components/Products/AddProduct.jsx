@@ -64,6 +64,17 @@ const AddProduct = () => {
         name="picture"
       />
       <TextField
+        value={product.picture2}
+        onChange={(e) =>
+          setProduct((prev) => ({ ...prev, picture2: e.target.value }))
+        }
+        fullWidth
+        id="outlined-basic"
+        label="Picture"
+        variant="outlined"
+        name="picture2"
+      />
+      <TextField
         value={product.type}
         onChange={(e) =>
           setProduct((prev) => ({ ...prev, type: e.target.value }))

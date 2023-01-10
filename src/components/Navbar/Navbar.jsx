@@ -53,7 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const pages = [
-  { name: "SHOP", link: "/products", id: 1 },
+  { name: "SHOP", link: "/", id: 1 },
   { name: "ABOUT US", link: "/about", id: 2 },
   { name: "CONTACT US", link: "/contacts", id: 3 },
 ];
@@ -186,7 +186,7 @@ export default function Navbar() {
         <Toolbar className="tool">
           <div className="logo_nav">
           <Typography className='img_navbar'>
-            <img src={require("./photo.png")} alt="" />
+            <img src={require("./photo.png")} alt="" />           
           </Typography>
           </div>
           <div className="btn_nav">

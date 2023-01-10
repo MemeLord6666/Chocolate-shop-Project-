@@ -11,7 +11,7 @@ const ProductsList = () => {
 
   const [page, setPage] = useState(1);
 
-  const itemsPerPage = 5;
+  const itemsPerPage = 9;
 
   const count = Math.ceil(products.length / itemsPerPage);
 
@@ -59,8 +59,9 @@ const ProductsList = () => {
         onChange={handleChange}
         shape="rounded"
       />
-
     </Grid>
+
+    
   );
 };
 

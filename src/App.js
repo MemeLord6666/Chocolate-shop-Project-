@@ -5,6 +5,7 @@ import AuthContextProvider from "./contexts/authContext";
 import CartContextProvider from "./contexts/cartContext";
 import ProductsContextProvider from "./contexts/productsContext";
 import MainRoutes from "./routes/MainRoutes";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (

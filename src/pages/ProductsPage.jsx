@@ -10,7 +10,7 @@ const ProductsPage = () => {
         <div><h3>SHOP</h3></div>
         <div><span>Shop your favourite Belgian chocolates! Discover our wide range of chocolate gifts and refine your search by type, <br /> price range or quantity to find your ideal gift.</span></div>
       </div>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className="list">
         <SideBar />
         <ProductsList />
       </Grid>

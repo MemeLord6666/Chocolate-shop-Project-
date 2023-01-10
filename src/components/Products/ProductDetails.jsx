@@ -12,22 +12,19 @@ const ProductDetails = () => {
     getOneProduct(id);
   }, []);
 
-  //   console.log(oneProduct);
 
   return (
-    <Paper sx={{ m: 3 }} elevation={24}>
-      <Grid container spacing={2}>
+    <Paper sx={{ m: 1 }} elevation={24}>
+      <Grid  container spacing={4} className="detail">
         <Grid item xs={6}>
-          <img src={oneProduct.picture} alt="" />
+          <img  src={oneProduct.picture} alt="" />
         </Grid>
         <Grid item xs={6}>
-          <Typography variant="h3">{oneProduct.name}</Typography>
-          <Typography variant="subtitle1">{oneProduct.type}</Typography>
-          <Typography variant="caption"> {oneProduct.price}$ </Typography>
-          <Typography variant="caption"> {oneProduct.description} </Typography>
-          <Box>
-            <Button variant="outlined">Добавить в корзину</Button>
-          </Box>
+          <Typography sx={{fontWeight: "bolder"}} variant="h3">{oneProduct.name}</Typography>
+          <Typography sx={{color: "black",  textDecoration: "underline"}} variant="subtitle1">{oneProduct.type}</Typography>
+          <Typography sx={{color: "orange", fontWeight: "bolder", fontSize: "40px"}} variant="caption"> {oneProduct.price}$ </Typography>
+          <br />
+          <Typography sx={{fontSize: "20px"}} variant="caption"> {oneProduct.description} </Typography>
         </Grid>
       </Grid>
     </Paper>

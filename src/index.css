@@ -3,9 +3,15 @@
   margin: 0;
   padding: 0;
 }
-
+body {
+  background-color: whitesmoke;
+}
 a {
   text-decoration: none;
+}
+.h3{
+  display: flex;
+  justify-content: center;
 }
 /* START HOME PAGE */
 .presentation{
@@ -99,3 +105,100 @@ a {
 .shop span {
   font-size: 18px;
 }
+/* END PRODUCT PAGE */
+
+/* START CARD */
+.imgC {
+  padding-top: 20px!important;
+  height: 200px;
+}
+.hhh {
+  margin-top: -20px;
+  margin-bottom: -80!important;
+}
+.ll {
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+}
+.hhh {
+  margin-top: 140px;
+}
+.hhhh {
+  margin-top: -30px!important;
+}
+.ls {
+  margin-left: 200px!important;
+}
+.dd {
+  padding-top: 20px!important;
+}
+.ll {
+  display: flex;
+  justify-content: start;
+}
+.imgC .imgCard2 {
+  display: none;
+}
+.imgC:hover .imgCard {
+  display: none;
+}
+.imgC:hover .imgCard2{
+  display: block;
+}
+.icc {
+  margin-top: 10px;
+  color: #503223;
+}
+.icc:active {
+  color: red;
+}
+/* END CARD */
+/* START CHECK IN */
+.input {
+  margin-top: 1%;
+  margin-left: 1%;
+  font-family: Montserrat, sans-serif;
+  padding: 0.5%;
+}
+
+.button {
+  font-family: Montserrat, sans-serif;
+  transition-duration: 0.7s;
+  margin-top: 2%;
+  height: 3em;
+  width: 7em;
+  color: white;
+  background-color: #7589eb;
+  border-radius: 7em;
+  border: 0;
+}
+
+.button:hover {
+  background-color: #ccd5fc;
+  color: black;
+  border-radius: 7em;
+}
+.form-group {
+  display: flex;
+  justify-content: center;
+}
+.form-actions{
+  display: flex;
+  justify-content: center;
+}
+.CreditC {
+  display: flex;
+  justify-content: center;
+}
+/* END CHECK IN */
+
+/* START CARD DETAILS */
+.detail {
+  display: flex!important;
+  justify-content: space-around;
+}
+.detail img {
+ width: 500px;
+}
+/* END CARD DETAILS */

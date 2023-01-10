@@ -8,46 +8,47 @@ import CartPage from "../pages/CartPage";
 import ContactsPage from "../pages/ContactsPage";
 import EditProductPage from "../pages/EditProductPage";
 import HomePage from "../pages/HomePage";
-import NotFoundPage from "../pages/NotFoundPage";
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductsPage from "../pages/ProductsPage";
+import CreditCard from "../components/Check/Check";
+import AboutUs from "../components/AboutUs/AboutUs";
 
 const MainRoutes = () => {
   const { user } = useAuth();
   const PUBLIC_ROUTES = [
     {
-      link: "/",
-      element: <HomePage />,
+      link: "/auth",
+      element: <AuthPage />,
       id: 1,
     },
     {
-      link: "/auth",
-      element: <AuthPage />,
-      id: 2,
-    },
-    {
-      link: "*",
-      element: <NotFoundPage />,
-      id: 3,
-    },
-    {
-      link: "/products",
+      link: "/",
       element: <ProductsPage />,
-      id: 4,
+      id: 2,
     },
     {
       link: "/products/:id",
       element: <ProductDetailsPage />,
-      id: 5,
+      id: 3,
     },
     {
       link: "/cart",
       element: <CartPage />,
-      id: 6,
+      id: 4,
     },
     {
       link: '/contacts',
       element: <ContactsPage />,
+      id: 5,
+    },
+    {
+      link: '/credit',
+      element: <CreditCard/>,
+      id: 6,
+    },
+    {
+      link: '/about',
+      element: <HomePage/>,
       id: 7,
     },
   ];

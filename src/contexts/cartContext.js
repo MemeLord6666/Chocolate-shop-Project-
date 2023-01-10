@@ -14,8 +14,8 @@ export const useCart = () => {
 };
 
 const INIT_STATE = {
-  cart: JSON.parse(localStorage.getItem("cart")), // то что хранится в локал сторэдж
-  cartLength: getCountProductsInCart(), // длина корзины
+  cart: JSON.parse(localStorage.getItem("cart")), 
+  cartLength: getCountProductsInCart(),
 };
 
 function reducer(state = INIT_STATE, action) {
@@ -30,11 +30,10 @@ function reducer(state = INIT_STATE, action) {
 const CartContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  // функция для получения всех данных в корзине
+  
   const getCart = () => {
-    let cart = JSON.parse(localStorage.getItem("cart")); // стягиваем и переводим в обычный формат
+    let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
-      // если в корзине ничего нет то создается новый объект и помещается в корзине
       localStorage.setItem(
         "cart",
         JSON.stringify({
@@ -49,50 +48,43 @@ const CartContextProvider = ({ children }) => {
     }
 
     dispatch({
-      // меняем глобавльное состояние(получаем все данные из корзины)
       type: CART.GET_CART,
       payload: cart,
     });
   };
 
-  // функция для добавления
   const addProductToCart = (product) => {
-    // принимает новый объект
-    let cart = JSON.parse(localStorage.getItem("cart")); // стягиваем и переводим в обычный формат
+    let cart = JSON.parse(localStorage.getItem("cart")); 
     if (!cart) {
-      // если в корзине ничего нет то создается новый объект
       cart = {
         products: [],
         totalPrice: 0,
       };
     }
     let newProduct = {
-      item: product, // сам продукт
-      count: 1, // количество
-      subPrice: +product.price, // сумма за определенное количество продуктов
+      item: product, 
+      count: 1,
+      subPrice: +product.price, 
     };
 
-    // проверка на наличие этого продукта в корзине
     let productToFind = cart.products.filter(
       (elem) => elem.item.id === product.id
     );
 
     if (productToFind.length == 0) {
-      // если нет в корзине, то он добавляется
       cart.products.push(newProduct);
     } else {
-      // если есть то продукт удаляется из корзины
       cart.products = cart.products.filter(
         (elem) => elem.item.id !== product.id
       );
     }
 
-    cart.totalPrice = calcTotalPrice(cart.products); // высчитывается общая стоимость
+    cart.totalPrice = calcTotalPrice(cart.products); 
 
-    localStorage.setItem("cart", JSON.stringify(cart)); // обновляется локал сторэдж
+    localStorage.setItem("cart", JSON.stringify(cart)); 
 
     dispatch({
-      // рендер
+
       type: CART.GET_CART,
       payload: cart,
     });

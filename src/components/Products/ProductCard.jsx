@@ -13,74 +13,82 @@ import { useProducts } from "../../contexts/productsContext";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../contexts/cartContext";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+// import "./src/index.css";
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
 
   const { addProductToCart, checkProductInCart } = useCart();
+
+ 
   const { deleteProduct } = useProducts();
   const {
     user: { email },
   } = useAuth();
 
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140, cursor: "pointer" }}
+    <Card  sx={{ maxHeight: 550, maxWidth: 280 }}>
+      <CardContent className="imgC">
+      <CardMedia className="imgCard"
+        sx={{ height: 350, width: 250, cursor: "pointer" }}
         image={item.picture}
         title="green iguana"
         onClick={() => navigate(`/products/${item.id}`)}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+      <CardMedia className="imgCard2"
+        sx={{ height: 350, width: 250, cursor: "pointer" }}
+        image={item.picture2}
+        title="green iguana"
+        onClick={() => navigate(`/products/${item.id}`)}
+      />
+
+      </CardContent>
+      <CardContent className="hhh" >
+      <Typography sx={{color: "#503223", fontWeight: "bold"}} gutterBottom variant="h5" component="div">
           {item.name}
         </Typography>
-        <Typography
-          sx={{ color: "green", fontWeight: "700" }}
+        <CardActions className="hhhh ll" sx={{ marginTop: "-1px"}}>
+        {email == ADMIN ? (
+          <>
+            <Button sx={{color: "red", fontWeight: "bold"}} onClick={() => deleteProduct(item.id)}>Delete</Button>
+            <Button sx={{color: "blue", fontWeight: "bold"}} onClick={() => navigate(`/edit/${item.id}`)}>Edit</Button>
+          </>
+        ) : (
+          <IconButton className="dd" onClick={() => addProductToCart(item)}>
+            {checkProductInCart(item.id) ? (
+              <>
+                <ShoppingCartIcon
+                  sx={{
+                    color: "orange",
+                  }}
+                />
+              </>
+            ) : (
+              <>
+                <AddShoppingCartIcon
+                sx={{
+                  color: "#503223"
+                }} />
+              </>
+            )}
+          </IconButton>
+        )}
+         <FavoriteIcon className="icc"/>
+         
+
+      </CardActions>
+        <Typography className="hhhh ll ls"
+          sx={{ color: "orange", fontWeight: "500" }}
           gutterBottom
           variant="h5"
           component="div"
         >
           {item.price}$
         </Typography>
-        <Typography
-          sx={{
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            display: "-webkit-box",
-            WebkitLineClamp: "3",
-            WebkitBoxOrient: "vertical",
-          }}
-          variant="body2"
-          color="text.secondary"
-        >
-          {item.description}
-        </Typography>
       </CardContent>
-      <CardActions>
-        {email == ADMIN ? (
-          <>
-            <Button onClick={() => deleteProduct(item.id)}>Delete</Button>
-            <Button onClick={() => navigate(`/edit/${item.id}`)}>Edit</Button>
-          </>
-        ) : (
-          <IconButton onClick={() => addProductToCart(item)}>
-            {checkProductInCart(item.id) ? (
-              <>
-                <ShoppingCartIcon
-                  sx={{
-                    color: "brown",
-                  }}
-                />
-              </>
-            ) : (
-              <>
-                <AddShoppingCartIcon />
-              </>
-            )}
-          </IconButton>
-        )}
-      </CardActions>
+     
     </Card>
   );
 }
